@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[Bài tập] Tính chỉ số cân nặng của cơ thể</title>
+</head>
+<body>
+    <form action="bai15.html">
+        <label for="weight">Weight :</label>
+        <input type="text" name="weight" value="" id="weight" name="weight">
+        <label for="height">Height :</label>
+        <input type="text" name="height" value="" id="height" name="height">
+        <input type="button" onclick=calculateBMI() value="BMI">
+    </form>
+    <p id="result"></p>
+    <script>
+        function calculateBMI() {
+            let w = parseFloat(document.getElementById("weight").value);
+            let h = parseFloat(document.getElementById("height").value);
+            let bmi =  w/(Math.pow(h,2));
+            if (bmi < 18)
+                {document.getElementById("result").innerHTML = "Underweight";}
+            else if (bmi < 25.0)
+                {document.getElementById("result").innerHTML = "Normal";}
+            else if (bmi < 30.0)
+                {document.getElementById("result").innerHTML = "Overweight";}
+            else
+                {document.getElementById("result").innerHTML = "Obese";}
+        }
+    </script>
+</body>
+</html>
