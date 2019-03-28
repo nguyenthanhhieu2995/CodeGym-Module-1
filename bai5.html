@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[Bài tập] Biến, kiểu dữ liệu và toán tử</title>
+</head>
+<body>
+    <div>
+        <p><b>Bài 1:</b>Viết chương trình nhập điểm của một sinh viên cho các môn: Vật lý, Hóa học, và Sinh học. Sau đó hiển thị điểm trung bình và tổng của những điểm này.</p>
+        <label for="a">a =</label><input type="text"  style="width: 35px;" id="a" value="">
+        <label for="b">b =</label><input type="text"  style="width: 35px;" id="b" value="">
+        <label for="c">c =</label><input type="text"  style="width: 35px;" id="c" value="">
+        <input type="button" onclick=avg() value="avg">
+        <br/>
+        <div id="avg">avg = (a + b + c )/3 =</div>
+    </div>
+    <div>
+        <p><b>Bài 2:</b>Viết chương trình nhập một giá trị là độ 0C (Celsius) và chuyển nó sang độ 0F (Fahrenheit). [Hướng dẫn: C/5 = (F-32)/9]</p>
+        <label for="convert">Convert C to F :</label>
+        <input  type="number" 
+                style="width: 35px;" 
+                id="convert" 
+                oninput="temperatureConverter(this.value)" 
+        onchange="temperatureConverter(this.value)">
+        <div id="outputCelcius">Result = </div>
+    </div>
+    <div>
+        <p><b>Bài 3 & 4:</b>Tính diện tích và chu vi hình tròn</p>
+        <label for="AreaCircle">Nhập bán kính hình tròn: </label>
+        <input type="number"  id="radius" placeholder="Circle radius" value="" oninput="areaCir()"/>
+        <p>Diện tích hình tròn là:<span id="area">0</span></p>
+        <p>Chu vi hình tròn là:<span id="circumference">0</span></p>
+    </div>
+    <script>
+        function avg() {
+            let a = parseInt(document.getElementById("a").value);
+            let b = parseInt(document.getElementById("b").value);
+            let c = parseInt(document.getElementById("c").value);
+            console.log(a);
+            if (isNaN(a)|| isNaN(b) || isNaN(c)) {
+                document.getElementById("avg").innerHTML = 'Dữ liệu không hợp lệ.';
+            } else {
+                let avg = ( a + b +c) /3;
+                console.log(avg);
+                document.getElementById("avg").innerHTML = 'avg = (a + b + c )/3 =' + avg;
+            }    
+        }
+        function temperatureConverter(valNum) {
+            valNum = parseFloat(valNum);
+            document.getElementById("outputCelcius").innerHTML=(valNum-32)/1.8;
+        }
+        function areaCir() {
+            let r = document.getElementById("radius").value;
+            let acreageOfCircle = 3.14*r*r;
+            let circumferenceOfCircle = 2*3.14*r;
+            document.getElementById("area").innerText = acreageOfCircle;
+            document.getElementById("circumference").innerHTML = circumferenceOfCircle;
+        }
+    </script>
+</body>
+</html>
