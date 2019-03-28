@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Transfer currency</title>
+</head>
+<body>
+    <style>
+        div.container {
+            display: flex;
+            margin: 0 auto;
+            width: 800px;
+            justify-content: space-around;
+        }
+        div.submit {
+            margin: auto 0;
+        }
+    </style>
+    <form action="bai6.html">
+        <div class=" container">
+            <div>
+                <label for="amount"><h4>Amount</h4></label>
+                <input type="number" step="0.1" id="amount" value="" name="amount">
+            </div>
+            <div >
+                <h4>From currency</h4>
+                <select name="from currency">
+                    <option value="viet">VietNam</option>
+                </select>
+            </div>
+            <div >
+                <h4>To currency</h4>
+                <select name="from currency">
+                    <option value="usd">USD</option>
+                </select>
+            </div>
+            <div class="submit">
+                <input type="button" value="convert" onclick=convert()>
+            </div>
+        </div>
+    </form>
+    <p id="print-result">result:</p>
+    <script>
+        function convert() {
+            let input = document.getElementById('amount').value;
+            let result = input/23000;
+            document.getElementById('print-result').innerHTML ='result:' + result + ' (USD)'
+        }
+    </script>
+</body>
+</html>
