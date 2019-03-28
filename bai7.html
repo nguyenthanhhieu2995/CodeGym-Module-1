@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[Bài tập] Ứng dụng máy tính</title>
+</head>
+<body>
+    <style>
+        div.container {
+            margin: 0 auto;
+        }
+        input {
+            margin: 5px 0px;
+        }
+    </style>
+    <div class="container">
+        <h3>Caculator</h3>
+        <form action="bai7.html">
+            <input type="text" value="" name="input1" id="x">
+            <input type="text" value="" name="input2" id="y">
+            <br/>
+            <input type="button" value="Addition(+)" onclick=Addition() name="add">
+            <input type="button" value="Substraction(-)" onclick=Substraction() name="sub">
+            <input type="button" value="Multiplication(x)" onclick=Multiplication() name="mul">
+            <input type="button" value="Division(*)" onclick=Division() name="div"> 
+        </form>
+        <p id="result">Result devision : </p>
+    </div>
+    <script>
+        var res = document.getElementById("result");
+        function Addition() {
+            var a = parseInt(document.getElementById("x").value);
+            var b = parseInt(document.getElementById("y").value);  
+            if (isNaN(a)||isNaN(b)) {
+                res.innerHTML= ' Dữ liệu không hợp lệ'
+            } else {
+                res.innerHTML = 'Result devision :'+ (a+b);
+            }      
+        }
+        function Substraction() {  
+            var a = parseInt(document.getElementById("x").value);
+            var b = parseInt(document.getElementById("y").value); 
+            if (isNaN(a)||isNaN(b)) {
+                res.innerHTML= ' Dữ liệu không hợp lệ'
+            } else {
+                res.innerHTML = 'Result devision :'+(a-b);
+            }
+        }
+        function Multiplication() {  
+            var a = parseInt(document.getElementById("x").value);
+            var b = parseInt(document.getElementById("y").value);      
+            if (isNaN(a)||isNaN(b)) {
+                res.innerHTML= ' Dữ liệu không hợp lệ'
+            } else {
+                res.innerHTML = 'Result devision :'+(a*b);
+            }
+        }
+        function Division() {
+            var a = parseInt(document.getElementById("x").value);
+            var b = parseInt(document.getElementById("y").value);
+            if (isNaN(a)||isNaN(b)) {
+                res.innerHTML= ' Dữ liệu không hợp lệ'
+            } else if (b == 0) {
+                res.innerHTML= 'Không có phép chia cho số 0'
+            } else {
+                res.innerHTML = 'Result devision :'+(a/b);
+            }        
+        }
+    </script>
+</body>
+</html>
