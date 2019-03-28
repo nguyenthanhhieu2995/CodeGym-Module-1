@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[Thực hành] Luyện tập với toán tử</title>
+</head>
+<body>
+    <h3>Bài 1: Viết chương trình nhập vào giá trị cho a và b. Tính tổng a và b, nếu tổng nhỏ hơn 4, hiển thị chuỗi Below, ngược lại hiển thị Over. Lưu ý sử dụng toán tử ? :</h3>
+    <h3>
+        Bài 2: Viết chương trình nhập vào giá trị cho chuỗi message. 
+        Nếu giá trị nhập vào là Employee thì hiển thị chuỗi Hello.
+        Còn lại nếu giá trị nhập vào là Director thì hiển thị chuỗi Greetings
+        Còn lại nếu giá trị nhập vào chuỗi rỗng thì hiển thị No login
+        Còn lại hiển thị chuỗi rỗng
+    </h3>
+    <script>
+        let a = parseInt(prompt("a: "));
+        let b = parseInt(prompt("b: "));
+        console.log(a,b);
+        result = (a + b < 4) ? 'Below' : 'Over';
+        alert(result);
+        let login = prompt("message :");
+        let message = (login == 'Employee') ? 'Hello' : (login == 'Director') ? 'Greetings' : (login == '') ?'No login' :'';
+        alert(message);
+    </script>
+</body>
+</html>
