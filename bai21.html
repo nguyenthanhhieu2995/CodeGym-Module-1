@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[*Bài tập] Luyện tập cấu trúc điều kiện 01</title>
+</head>
+<body>
+    <p><b>Bài 1 :</b>Nhập vào hai số a và b, và kiểm tra xem a có chia hết cho b hay không ?</p>
+    <label for="a">Number a :</label><input type="text" size="15px" id="a">
+    <label for="b">Number b :</label><input type="text" size="15px" id="b">
+    <input type="button" value="Check" onclick="CheckAdivB()">
+    <p id="result1"><br></p>
+    <hr>
+    <p><b>Bài 2 :</b>Nhập tuổi và in ra kết quả nếu tuổi học sinh đó không đủ điều kiện vào học lớp 10.</p>
+    <label for="ageStudent">Enter age of student :</label>
+    <input type="text" size="10px" id="ageStudent">
+    <input type="button" value="Check" onclick="CheckAge()">
+    <p id="result2"><br></p>
+    <hr>
+    <p><b>Bài 3 :</b>Nhập một số nguyên bất kỳ và in kết quả ra màn hình để nói cho người dùng biết số đó là lớn hay nhỏ hơn 0.</p>
+    <label for="checkNum">Number :</label>
+    <input type="text" size="10px" id="checkNum">
+    <input type="button" value="Check" onclick="CompareNumAndZero()">
+    <p id="result3"><br></p>
+    <hr>
+    <p><b>Bài 4 :</b> Nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó.</p>
+    <label for="num1">Number 1:</label>
+    <input type="text" size="10px" id="num1">
+    <label for="num2">Number 2:</label>
+    <input type="text" size="10px" id="num2">
+    <label for="num3">Number 3:</label>
+    <input type="text" size="10px" id="num3">
+    <input type="button" value="Check" onclick="findMax()">
+    <p id="result4"><br></p>
+    <hr>
+    <p><b>Bài 5 :</b>  Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ.</p>
+    <label for="diligent">diligent-mark:</label>
+    <input type="text" size="10px" id="diligent">
+    <label for="mid-term-mark">mid-term-mark:</label>
+    <input type="text" size="10px" id="mid-term-mark">
+    <label for="final-term-mark">final-term-mark:</label>
+    <input type="text" size="10px" id="final-term-mark">
+    <input type="button" value="Rank" onclick="calRank()">
+    <p><i>Notes:</i> Formula : Rank = ((diligent-mark)*2 + (mid-term-mark)*2 + (final-term-mark)*6)/10 </p>
+    <p id="result5"><br></p>
+    <hr>
+    <p><b>Bài 6 :</b> Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng.</p>
+    <label for="sales">Sales:(VND)</label>
+    <input type="text" size="10px" id="sales">
+    <label for="amount">Amount:(VND)</label>
+    <input type="text" size="10px" id="amount">
+    <input type="button" value="Benefit" onclick="benefit()">
+    <p id="result6"><br></p>
+    <hr>
+    <p><b>Bài 7 :</b> Tính cước điện thoại cho một hộ gia đình với các thông số đã cho.</p>
+    <label for="tax">tax:</label>
+    <input type="text" size="10px" id="tax">
+    <label for="amountNum">Amount:</label>
+    <input type="text" size="10px" id="amountNum">
+    <input type="button" value="Pay" onclick="Pay()">
+    <p id="result7"><br></p>
+    <hr>
+
+
+
+    <script>
+
+        function CheckAdivB() {
+            let a = parseInt(document.getElementById("a").value);
+            let b = parseInt(document.getElementById("b").value);
+            let res = document.getElementById("result1");
+            if (isNaN(a)==true || isNaN(b)==true) {
+                res.innerHTML = "<b>Input must be a number !</b>";
+            } else {
+                if (a%b == 0) {
+                    res.innerHTML = "<b> a is divisible by b.</b>";
+                } else {
+                    res.innerHTML = "<b> a is NOT divisible by b.</b>";
+                }
+            }
+        }
+        function CheckAge() {
+            let age = parseInt(document.getElementById("ageStudent").value);
+            let res = document.getElementById("result2");
+            if (!isNaN(age)) {
+                if (age >=16) {
+                    res.innerHTML = "<b>This student is old enough to study grade 10.</b>";
+                } else {
+                    res.innerHTML = "<b> This student is NOT old enough to study grade 10.</b>";
+                }
+            } else {
+                res.innerHTML = "<b> Input must be a number !</b>"
+            }
+        }
+        function CompareNumAndZero() {
+            let num = parseInt(document.getElementById("checkNum").value);
+            let res = document.getElementById("result3");
+            if (!isNaN(num)) {
+                if (num>0){
+                    res.innerHTML = "<b>" + num + " > 0</b>";
+                } else {
+                    res.innerHTML = "<b>" + num + " < 0</b>";
+                }
+            } else {
+                res.innerHTML = "<b>Input must be number !</b>" ;
+            }
+        }
+        function findMax() {
+            let num1 = parseInt(document.getElementById("num1").value);
+            let num2 = parseInt(document.getElementById("num2").value);
+            let num3 = parseInt(document.getElementById("num3").value);
+            let res = document.getElementById("result4");
+            if (isNaN(num1)||isNaN(num2)||isNaN(num3)) {
+                res.innerHTML = "<b>Input must be a number.</b>"
+            } else {
+                if (num1>num2) {
+                    if (num1>num3) {
+                        res.innerHTML = "<b>Num 1 is max number</b>"
+                    } else {
+                        res.innerHTML = "<b>Num 3 is max number</b>"
+                    }
+                } else {
+                    if (num2>num3) {
+                        res.innerHTML = "<b>Num 2 is max number</b>"
+                    } else {
+                        res.innerHTML = "<b>Num 3 is max number</b>"
+                    }
+                }
+            }
+        }
+        function calRank() {
+            let diligentMark = parseInt(document.getElementById("diligent").value);
+            let midTermMark = parseInt(document.getElementById("mid-term-mark").value);
+            let finalTermMark = parseInt(document.getElementById("final-term-mark").value);
+            let res = document.getElementById("result5");
+            if (isNaN(diligentMark)||isNaN(midTermMark)||isNaN(finalTermMark)) {
+                res.innerHTML = "<b>Input must be a number</b>"
+            } else if ( diligentMark > 10 || diligentMark < 0
+                        || midTermMark > 10 || midTermMark < 0 
+                        || finalTermMark > 10 || finalTermMark < 0 ) {
+                res.innerHTML = "<b>Input must be in 0 --> 10</b>"
+            } else {
+                let Rank = ((diligentMark)*2 + (midTermMark)*2 + (finalTermMark)*6)/10;
+                if ( Rank >= 8 ) {
+                    res.innerHTML = "<b>Rank: Excellent. </b>"
+                } else if ( Rank < 8 && Rank >= 6.5) {
+                    res.innerHTML = "<b>Rank: Good. </b>"
+                } else if ( Rank <6.5 && Rank >= 5) {
+                    res.innerHTML = "<b>Rank: Average.</b>"
+                } else {
+                    res.innerHTML = "<b>Rank: Weak.</b>"
+                }
+            }
+        }
+        function benefit() {
+            let sales = parseInt(document.getElementById("sales").value);
+            let amount = parseInt(document.getElementById("amount").value);
+            let res = document.getElementById("result6");
+            if (isNaN(sales)==true || isNaN(amount)==true) {
+                res.innerHTML = "<b>Input must be a number !</b>";
+            } else {
+                if (sales> amount) {
+                    res.innerHTML = "<b>Benefit equal 30% sales :</b>" + sales * 0.3 +"<b>VND</b>";
+                } else {
+                    res.innerHTML = "<b>Benfit equal 10% sales :</b>" + sales * 0.1 +"<b>VND</b>";
+                }
+            }
+        }
+        function Pay() {
+            let tax = parseInt(document.getElementById("tax").value);
+            let amount = parseInt(document.getElementById("amountNum").value);
+            let res = document.getElementById("result7");
+            if (isNaN(tax)==true || isNaN(amount)==true) {
+                res.innerHTML = "<b>Input must be a number !</b>";
+            } else {
+                res.innerHTML = "<b>Total must be pay :</b>" + tax*amount;
+            }
+        }
+    </script>
+</body>
+</html>
