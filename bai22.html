@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[*Bài tập] Luyện tập cấu trúc điều kiện 02</title>
+</head>
+<body>
+    <p><b>Bài 1 :</b>Chuyển từ độ C sang độ F.</p>
+    <label for="celcius">Celcius :</label><input type="text" size="10px" id="celcius">
+    <input type="button" value="Convert" onclick="TransCtoF()">
+    <p id="result1">Result :</p>
+    <hr>
+    <p><b>Bài 2 :</b>Chuyển từ mét sang feet:</p>
+    <label for="meter">Meter :</label><input type="text" size="10px" id="meter">
+    <input type="button" value="Convert" onclick="TransMtoFt()">
+    <p id="result2">Result :</p>
+    <hr>
+    <p><b>Bài 3 :</b>Tính diện tích hình vuông khi biết cạnh a.</p>
+    <label for="areaSquare">Meter :</label><input type="text" size="10px" id="areaSquare">
+    <input type="button" value="Calculate" onclick="areaSquare()">
+    <p id="result3">Result :</p>
+    <hr>
+    <p><b>Bài 4 :</b>Tính diện tích hình  chữ nhật khi biết 02 cạnh a, b.</p>
+    <label for="aRectangle">a :</label><input type="text" size="10px" id="aRectangle">
+    <label for="bRectangle">b :</label><input type="text" size="10px" id="bRectangle">
+    <input type="button" value="Calculate" onclick="areaRectangle()">
+    <p id="result4">Result :</p>
+    <hr>
+    <p><b>Bài 5 :</b>Tính diện tích tam giác vuông khi biết 02 cạnh a, b.</p>
+    <label for="aRightAngledTriangle">a :</label><input type="text" size="10px" id="aRightAngledTriangle">
+    <label for="bRightAngledTriangle">b :</label><input type="text" size="10px" id="bRightAngledTriangle">
+    <input type="button" value="Calculate" onclick="areaTriangle()">
+    <p id="result5">Result :</p>
+    <hr>
+    <p><b>Bài 6 :</b>Giải phương trình bậc 1 dạng ax + b = 0</p>
+    <label for="a6">a :</label><input type="text" size="10px" id="a6">
+    <label for="b6">b :</label><input type="text" size="10px" id="b6">
+    <input type="button" value="Calculate" onclick="EquationOfTheFirstOrder()">
+    <p id="result6"><br></p>
+    <hr>
+    <p><b>Bài 7 :</b>Giải phương trình bậc 2 dạng ax² + bx + c = 0</p>
+    <label for="a7">a :</label><input type="text" size="10px" id="a7">
+    <label for="b7">b :</label><input type="text" size="10px" id="b7">
+    <label for="c7">c :</label><input type="text" size="10px" id="c7">
+    <input type="button" value="Calculate" onclick="quadraticEquation()">
+    <p id="result7"><br></p>
+    <hr>
+    <p><b>Bài 8 :</b>Kiểm tra xem một số nhập vào có phải là tuổi của một người không. Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0.</p>
+    <label for="age">Age :</label><input type="text" size="10px" id="age">
+    <input type="button" value="Check" onclick="isAge()">
+    <p id="result8"><br></p>
+    <hr>
+    <p><b>Bài 9 :</b>Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác. Điều kiện để a,b,c là cạnh của một tam giác là:</p>
+    <label for="a9">a :</label><input type="text" size="10px" id="a9">
+    <label for="b9">b :</label><input type="text" size="10px" id="b9">
+    <label for="c9">c :</label><input type="text" size="10px" id="c9">
+    <input type="button" value="Check" onclick="checkTriangle()">
+    <p id="result9"><br></p>
+    <hr>
+
+    <script>
+        function TransCtoF() {
+            let c = document.getElementById("celcius").value;
+            let res = document.getElementById("result1");
+            if (isNaN(c)) {
+                res.innerHTML = `Input must be a number.`
+            } else {
+                res.innerHTML =  `Result : ${c * 9/5 + 32} °F`
+            }
+        }
+        function TransMtoFt() {
+            let m = document.getElementById("meter").value;
+            let res = document.getElementById("result2");
+            if (isNaN(m)) {
+                res.innerHTML = `Input must be a number.`
+            } else {
+                res.innerHTML =  `Result : ${m * 3.2808} ft`
+            }
+        }
+        function areaSquare() {
+            let a = document.getElementById("areaSquare").value;
+            let res = document.getElementById("result3");
+            if (isNaN(a)) {
+                res.innerHTML = `Input must be a number.`
+            } else {
+                res.innerHTML =  `Result : ${a*a} m²`
+            }
+        }
+        function areaRectangle() {
+            let aRectangle = document.getElementById("aRectangle").value;
+            let bRectangle = document.getElementById("bRectangle").value;
+            let res = document.getElementById("result4");
+            if (isNaN(aRectangle)||isNaN(bRectangle)) {
+                res.innerHTML = `Input must be a number.`
+            } else {
+                res.innerHTML =  `Result : ${aRectangle*bRectangle} m²`
+            }
+        }
+        function areaTriangle() {
+            let aTriangle = document.getElementById("aRightAngledTriangle").value;
+            let bTriangle = document.getElementById("bRightAngledTriangle").value;
+            let res = document.getElementById("result5");
+            if (isNaN(aTriangle)||isNaN(bTriangle)) {
+                res.innerHTML = `Input must be a number.`
+            } else {
+                res.innerHTML =  `Result : ${(aTriangle*bTriangle)/2} m²`
+            }
+        }
+        function EquationOfTheFirstOrder() {
+            let a = document.getElementById("a6").value;
+            let b = document.getElementById("b6").value;
+            let res = document.getElementById("result6");
+            if (isNaN(a)||isNaN(b)) {
+                res.innerHTML = `Dữ liệu không hợp lệ`;
+            }
+            else if (a == 0 && b == 0){
+                res.innerHTML = `Phương trình vô số nghiệm`;
+            }
+            else if (a != 0 && b == 0){
+                res.innerHTML = `Phương trình có nghiệm x = 0`;
+            }
+            else if (a == 0 && b != 0){
+                res.innerHTML = `Phương trình vô nghiệm`;
+            }
+            else {
+                res.innerHTML = `Phương trình có nghiệm x = ${-b/a}`;
+            }
+        }
+        function quadraticEquation() {
+            let a = document.getElementById("a7").value;
+            let b = document.getElementById("b7").value;
+            let c = document.getElementById("c7").value;
+            let res = document.getElementById("result7");
+            if (isNaN(a)||isNaN(b)||isNaN(c)) {
+                res.innerHTML = "Dữ liệu không hợp lệ"
+            } else {
+                let delta = b*b -4*a*c;
+                if (delta == 0) {
+                    res.innerHTML = `Phương trình có nghiệm kép ${-b/(2*a)}`;
+                } else if (delta < 0) {
+                    res.innerHTML = `Phương trình vô nghiệm`
+                } else {
+                    let x1=(-b-Math.sqrt(delta))/(2*a);
+                    let x2=(-b+Math.sqrt(delta))/(2*a);
+                    res.innerHTML = `Phương trình có 2 nghiệm phân biệt : ${x1} ;  ${x2}`
+                }
+            }
+        }
+        function isAge() {
+            let age = document.getElementById("age").value;
+            let res = document.getElementById("result8");
+            if (isNaN(age)) {
+                res.innerHTML = "dữ liệu không hợp lệ"
+            } else if ( age >120 || age<0) {
+                res.innerHTML = "dữ liệu nhập vào không phải tuổi"
+            } else {
+                res.innerHTML = "dữ liệu nhập vào là tuổi"
+            }
+        }
+        function checkTriangle() {
+            let a = document.getElementById("a9").value;
+            let b = document.getElementById("b9").value;
+            let c = document.getElementById("c9").value;
+            let res = document.getElementById("result9");
+            if (isNaN(a)||isNaN(b)||isNaN(c)) {
+                res.innerHTML = "Dữ liệu không hợp lệ"
+            } else if ( (a>0 && b>0 && c>0) && ((a + b > c) || (a + c > b) || (b + c > a)) ) {
+                res.innerHTML = "Dữ liệu là các cạnh của một hình tam giác"
+            } else {
+                res.innerHTML = "Dữ liệu nhập vào không phải là các cạnh của một tam giác"
+            }
+        }
+    </script>
+</body>
+</html>
