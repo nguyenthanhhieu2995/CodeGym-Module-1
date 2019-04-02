@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bài 2</title>
+</head>
+<body>
+    
+    <p><b>Bài 2 :</b>Tính giai thừa của một số nguyên dương</p>
+    <label for="n"> N = </label><input type="text" size="10" id="n">
+    <input type="button" value="Calculate" id="btn">
+    <h1 id="result"> </h1>
+    <script>
+        var res = document.getElementById("result");
+        var btn = document.getElementById("btn");
+        btn.addEventListener("click",function (){
+            var number = document.getElementById("n").value;
+            if (isNaN(number)) {
+                res.innerHTML = 'Input must be a number.'
+            } else {
+                let result = 1;
+            for ( var i = number; i > 0; i--) {
+                result = result * i;
+            }
+            res.innerHTML = `${number}! = ${result}`
+            } 
+        })
+    </script>
+</body>
+</html>

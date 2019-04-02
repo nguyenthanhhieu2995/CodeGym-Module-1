@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bai 4</title>
+</head>
+<body>
+    <p><b>Bài 4:</b> In hình chữ nhật</p>   
+    <h2 id="result"></h2> 
+    <script>
+        let res = document.getElementById("result").value;
+        function printRactangle(w,h) {
+            let result = '';
+            let res = document.getElementById("result");
+            for (let i = 0; i<=h; i++) {
+                for ( let j = 0; j<=w; j++) {
+                    if ( i == 0 || i == h ) {
+                        result += '*';
+                    } else {
+                        if ( j == 0 || j == w) {
+                            result += '*';
+                        } else {
+                            result += '&nbsp&nbsp;';
+                        }
+                    }
+
+                }         
+                result += '<br/>'
+            }
+            res.innerHTML = result;
+        }
+        printRactangle(8,5);
+    </script>
+</body>
+</html>

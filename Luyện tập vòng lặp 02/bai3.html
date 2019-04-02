@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bài 3:</title>
+</head>
+
+<body>
+    <p><b>Bài 3:</b>In tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau</p>
+    <h2 id="result1"></h2>
+    <h2 id="result2"></h2>
+    <h2 id="result3"></h2>
+    <h2 id="result4"></h2>
+    <script>
+        var res1 = document.getElementById("result1");
+        var res2 = document.getElementById("result2");
+        var res3 = document.getElementById("result3");
+        var res4 = document.getElementById("result4");
+
+        function display1() {
+            let i = 1;
+            let n = 5;
+            let triangle = '';
+            while (i <= n) {
+                for (let j = 1; j <= i; j++) {
+                    triangle += "*"
+                }
+                triangle += "<br/>";
+                i++;
+            }
+            res1.innerHTML = triangle;
+        }
+
+        function display2() {
+            let i = 5;
+            let triangle = '';
+            while (i > 0) {
+                for (let j = 1; j <= i; j++) {
+                    triangle += "*"
+                }
+                triangle += "<br/>";
+                i--;
+            }
+            res2.innerHTML = triangle;
+        }
+
+        function display3() {
+            var n = 5;
+            var row = "";
+            for (var i = 1; i <= n; i++) {  
+                for (var j = 1; j <= (n - i); j++) {
+                    row += "&nbsp&nbsp;";
+                }
+                for (var k = 1; k <= i; k++) {
+                    row += '*';
+                }
+                row +="<br/>"
+                res3.innerHTML = row;
+            }
+        }
+        function display4() {
+            var n = 5;
+            var row = "";
+            for (var i = 0; i <= n; i++) {  
+                for (var j = 1; j <= i ; j++ ) {
+                    row += "&nbsp&nbsp;";
+                }
+                for (var j = 5; j > i; j--) {
+                    row += "*";
+                }
+                row +="<br/>";
+            }
+            res4.innerHTML = row;
+        }
+
+
+        display1();
+        display2();
+        display3();
+        display4();
+    </script>
+</body>
+
+</html>
