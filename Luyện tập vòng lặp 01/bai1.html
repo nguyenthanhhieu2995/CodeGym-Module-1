@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bai 1</title>
+</head>
+<body>
+    <h1 id = "result" style="text-align:center"></h1>
+    <script>
+        var res = document.getElementById("result");
+        // count = (a,b) => {
+        //     return new Promise((resolve,reject)=>{
+        //         var count = setInterval(() => {
+        //             ++a;
+        //             res.innerHTML=`${a}`; 
+        //             if(a == b){
+        //                 clearInterval(count);
+        //                 resolve();
+        //             }
+        //         },1000);
+        //     })
+        // }
+        // count(0,10).then(()=> alert(`Done!`));
+
+        function count10() {
+            var i = 0;
+            var count = setInterval(() => {
+                
+                res.innerHTML = `${i}`;
+                ++i;
+                if (i === 10) {
+                    clearInterval(count);
+                    console.log(`Done!`);
+
+                }
+                
+            },1000)
+        }
+        count10();
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bai 4</title>
+</head>
+<body>
+    <p><b>Bài 4:</b> Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.</p>
+    <h1 id="result" style="text-align: center"> </h1>
+    <script>
+        res = document.getElementById("result");
+        function Fibonancci(n) {
+            if (n < 2) {
+                return 1;
+            } else {
+                return Fibonancci(n-2) + Fibonancci(n-1);
+            }
+        }
+        function check() {
+            let n = 2;
+            while (Fibonancci(n) % 5 !== 0) {
+                n+=1;
+            }
+            res.innerHTML = `${Fibonancci(n)}`;
+        }
+        check();
+    </script>
+</body>
+</html>

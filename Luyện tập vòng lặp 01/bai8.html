@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bai 8</title>
+</head>
+<body>
+    <p><b>Bài 8 :</b>Game đoán số.</p>
+    <p>1. Thiết kế giao diện: Giao diện chỉ gồm 1 Button "Chơi": cho phép người dùng bắt đầu  chơi hoặc chơi lại  </p>
+    <p>2. Mô tả ứng dụng: Khi người dùng nhấn vào button “Chơi”:</p>   
+    <ul>
+        <li>Ứng dụng hiển thị cửa sổ prompt cho phép người dùng nhập vào muốn đoán trong khoảng nào</li>
+        <li>Ứng dụng chọn ra số ngẫu nhiên trong khoảng mà người dùng chọn  </li>
+        <li>Ứng dụng hiển thị cửa số prompt cho người dùng nhập giá trị mà người dùng đoán  </li>
+        <li>Ứng dụng lấy kết quả và so sánh với giá trị ngẫu nhiên.
+            <ul>
+                <li>Nếu bằng thì hiển thị thông báo chúc mừng và kết thúc lượt chơi  </li>
+                <li>Nếu lớn hơn hoặc bé thua thì hiển thị thông báo lớn hơn hay bé thua và cho phép người dùng lựa chọn lại.</li>
+            </ul>
+        </li>
+    </ul>
+    <hr>
+    <input type="button" value="Play!" onclick="play()" id="btn1">
+    <input type="button" id="btn2" style="display:none" value="Play again!" onclick="playAgain()">
+    <h1 id="result"><br></h1>
+    <script>
+        let res = document.getElementById("result");
+        let btn1 = document.getElementById("btn1");
+        let btn2 = document.getElementById("btn2")
+        function play() {
+            let count = 0;
+            let min = parseInt(prompt("Min",""));
+            let max = parseInt(prompt("Max",""));
+            let rand = Math.floor(Math.random()*(max-min+1)+min);
+            while ( count < 3) {
+                let ans = parseInt(prompt("Let's guess :",""));
+                if (rand === ans) {
+                    res.innerHTML = 'Congratulation !';
+                    btn1.style.display = 'none';
+                    btn2.style.display = 'block';
+                    break;
+                } else {
+                    if  (ans > rand) {
+                        alert(' Guess Number > Secret Number')
+                    } else {
+                        alert(' Guess Number > Secret Number')
+                    }
+                    count+=1;
+                }
+            }
+        }
+        function playAgain() {
+            res.innerHTML="<br/>";
+            btn1.style.display = 'block';
+            btn2.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
