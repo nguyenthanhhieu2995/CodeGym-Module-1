@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,28 +8,37 @@
     <title>[Bài tập] Máy tính đơn giản</title>
     <script>
         function insert(num) {
-            document.form.textview.value = document.form.textview.value + num;
+            console.log(typeof (num));
+            if (document.form.textview.value.charAt(0) == "0") {
+                document.form.textview.value = num;
+            } else {
+                document.form.textview.value = document.form.textview.value + num;
+            }
         }
+
         function equal() {
-            var exp = parseFloat(document.form.textview.value);
+            var exp = (document.form.textview.value);
             if (exp) {
                 document.form.textview.value = eval(exp);
             }
 
         }
+
         function clean() {
-            document.form.textview.value=""
+            document.form.textview.value = ""
         }
     </script>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
+
         table {
             border: 1px solid black;
-            border-radius : 4px;
+            border-radius: 4px;
         }
+
         .button {
             width: 50px;
             height: 50px;
@@ -36,14 +46,16 @@
             margin: 2px;
             cursor: pointer;
         }
+
         .textview {
             width: 205px;
-            margin:5px;
+            margin: 5px;
             padding: 5px;
 
         }
     </style>
 </head>
+
 <body>
     <div class=main>
         <table>
@@ -81,4 +93,5 @@
         </table>
     </div>
 </body>
+
 </html>
