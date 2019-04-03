@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Viết hàm tính bình phương của một số bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.</title>
+</head>
+<body>
+    <script>
+        function binhphuong(x) {
+            return x*x;
+        }
+        function dientich_hinhtron(r) {
+            return r*r*3.14
+        }
+        function chuvi_hinhtron(r) {
+            return 2*r*3.14
+        }
+        function giaithua(n) {
+            let result=1
+            for (let i=1;i<=n;i++) {
+                result = result*i;
+            }
+            return result;
+        }
+        function checknumber(n) {
+            return(isNaN(n))
+        }
+        function swap(a,b) {
+            let temp = a;
+            a = b;
+            b = temp;
+            console.log(a,b);
+        }
+        function min(a,b,c) {
+            let mini = a;
+            if (mini>b) {
+                mini = b
+            } 
+            if (mini>c){
+                mini = c
+            }
+            return mini;
+        }
+        function swapArr(arr) {
+            return reserve(arr)
+        }
+        
+
+    </script>
+</body>
+</html>
