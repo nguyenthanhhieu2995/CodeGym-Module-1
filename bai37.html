@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[*Bài tập] Luyện tập mảng 01</title>
+</head>
+
+<body>
+    <input type="text" id="txtValue"></input>
+    <input type="button" id="btnAdd" value="Add" onclick="add_element_to_array();"></input>
+    <input type="button" id="btnDisplay" value="Display" onclick="display_array();"></input>
+
+    <div id="result0"></div>
+    <div id="result1"></div>
+    <div id="result2"></div>
+    <div id="result3"></div>
+    <div id="result4"></div>
+    <div id="result5"></div>
+    <script>
+        let x = 0;
+        let array = Array();
+
+        function add_element_to_array() {
+            if (document.getElementById("txtValue").value !== '' && isNaN(document.getElementById("txtValue").value) ==
+                false) {
+                array[x] = parseFloat(document.getElementById("txtValue").value);
+                x++;
+            } else {
+                document.getElementById("txtValue").value = "";
+            }
+        }
+
+        function display_array() {
+            let e = "<hr/>";
+            let a1 = "<b>1.Number > 10 :</b>";
+            let a2 = "<b>5.Number is interger and < 0 :</b>";
+            let sum = 0;
+            let avg = 0;
+            for (let i = 0; i < array.length; i++) {
+                e += "Element " + i + " = " + array[i] + "<br/>";
+                if (array[i] >= 10) {
+                    a1 += `${array[i]} ; `;
+                }
+                if (array[i] < 0 && Number.isInteger(array[i])) {
+                    a2 += `${array[i]} ; `;
+                }
+                sum += array[i];
+            }
+            avg = sum/array.length;
+
+            document.getElementById("result0").innerHTML = e;
+            document.getElementById("result1").innerHTML = a1;
+            document.getElementById("result2").innerHTML =
+                `<b>2. Max value in array is: </b>${Math.max(...array)}<b>,
+                 and index of max value is </b>${array.indexOf((Math.max(...array)))}`;
+            document.getElementById("result3").innerHTML = `<b>3.sum = </b>${sum} <b>, avg = </b>${avg}`;
+            document.getElementById("result4").innerHTML = `<b>4.revese array: </b>[${array.reverse()}]`;
+            document.getElementById("result5").innerHTML = a2
+        }
+    </script>
+</body>
+
+</html>
