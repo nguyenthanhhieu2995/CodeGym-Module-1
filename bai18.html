@@ -10,7 +10,7 @@
             document.form.textview.value = document.form.textview.value + num;
         }
         function equal() {
-            var exp = document.form.textview.value;
+            var exp = parseFloat(document.form.textview.value);
             if (exp) {
                 document.form.textview.value = eval(exp);
             }
@@ -74,7 +74,7 @@
             </tr>
             <tr>
                 <td><input class="button" type="button" value="C" onclick="clean()"></td>
-                <td><input class="button" type="button" value="0" onclick=insert(1)></td>
+                <td><input class="button" type="button" value="0" onclick=insert(0)></td>
                 <td><input class="button" type="button" value="=" onclick="equal()"></td>
                 <td><input class="button" type="button" value="/" onclick="insert('/')"></td>
             </tr>
