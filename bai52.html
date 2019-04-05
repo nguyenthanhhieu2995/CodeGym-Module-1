@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[Bài tập] Xây dựng lớp mô tả điện thoại</title>
+</head>
+
+<body>
+    <script>
+        function Mobile(cents) {
+            if (cents < 0 || cents > 100) {
+                throw new Error("Invalid cents value: " + cents);
+            }
+            this.cents = cents;
+            this.contextMess = '';
+            this.receiveBox = '';
+            this.isOn = true;
+            this.typingMess = function (str) {
+                if (!this.isOn) {
+                    return
+                } else {
+                    return this.contextMess += str;
+                    this.consume();
+                }
+
+            }
+            this.receiveMess = function (contextMess) {
+                if (!this.isOn) {
+                    return
+                } else {
+                    this.receiveBox += contextMess;
+                    this.consume();
+                }
+
+            }
+            this.sendMess = function (otherPhone) {
+                if (!this.isOn) {
+                    return
+                } else {
+                    otherPhone.receiveMess(this.contextMess);
+                    this.consume();
+                }
+
+            }
+            this.turnOnOff = function () {
+                return this.isOn = !this.isOn;
+            }
+            this.charge = function (time) {
+                if (this.cents < 100) {
+                    return this.cent += time;
+                }
+            }
+            this.consume = function () {
+                this.cents -= 1;
+            }
+        }
+        var nokia = new Mobile(50);
+        var iphone = new Mobile(47);
+        console.log(nokia, iphone);
+        nokia.typingMess('ewrtyghujl;');
+        nokia.sendMess(iphone);
+        console.log(nokia, iphone);
+    </script>
+</body>
+
+</html>
