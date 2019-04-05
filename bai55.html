@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[Bài tập] Phát triển ứng dụng nhỏ mô phỏng câu chuyện Adam và Eva</title>
+</head>
+
+<body>
+    <script>
+        function Apple() {
+            this.weight = 10;
+        }
+        Apple.prototype.decrease = function () {
+            return this.weight--;
+        }
+        Apple.prototype.isEmpty = function () {
+            if (this.weight === 0) {
+                return true
+            } else {
+                return false
+            }
+        }
+        Apple.prototype.getWeight = function () {
+            return this.weight;
+        }
+
+        function Human(name, weight) {
+            this.name = name;
+            this.gender = "";
+            this.weight = weight;
+        }
+        Human.prototype.isMale = function () {
+            if (this.gender == "male") {
+                return true
+            } else {
+                return false
+            }
+        }
+        Human.prototype.setGender = function (sex) {
+            return this.gender = sex;
+        }
+        Human.prototype.eatApple = function (apple) {
+            if (!apple.isEmpty()) {
+                this.weight += 1;
+                apple.decrease();
+                console.log(`${this.name} eat apple....`)
+            } 
+                
+        
+        }
+
+        function theStory() {
+            var adam = new Human('adam', 60);
+            var eva = new Human('eva', 45);
+            var apple = new Apple()
+            adam.setGender('male');
+            eva.setGender('female');
+            while (apple.weight > 0) {
+                adam.eatApple(apple);
+                eva.eatApple(apple);
+            }
+            console.log('Apple are already eaten');
+        }
+
+        theStory();
+    </script>
+</body>
+
+</html>
