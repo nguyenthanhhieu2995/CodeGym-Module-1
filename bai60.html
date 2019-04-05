@@ -11,8 +11,8 @@
 <body>
     <script>
         function isEmail(str) {
-            regexp = /^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)$/;
-            if (regexp.test(str)) {
+            regExp = /^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)$;/;
+            if (regExp.test(str)) {
                 console.log('true');
             } else {
                 console.log('false');
@@ -32,5 +32,4 @@
         isEmail(mail6);
     </script>
 </body>
-
 </html>

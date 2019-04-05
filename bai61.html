@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[Bài tập] Validate account</title>
+</head>
+<body>
+        <script>
+                function ValidateAccount(str) {
+                    regExp = /^[_a-z0-9]{6,}$/;
+                    if (regExp.test(str)) {
+                        console.log('true');
+                    } else {
+                        console.log('false');
+                    }
+                }
+                var str1 = '123abc_';
+                var str2 = '_abc123';
+                var str3 = '______';
+                var str4  = '123456';
+                var str5 = 'abcdefg';
+                ValidateAccount(str1);
+                ValidateAccount(str2);
+                ValidateAccount(str3);
+                ValidateAccount(str4);
+                ValidateAccount(str5);
+            </script>
+</body>
+</html>
