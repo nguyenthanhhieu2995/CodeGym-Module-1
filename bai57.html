@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[*Bài tập] Phát triển ứng dụng mô phỏng lại quá trình mèo bắt chuột và ăn chuột.</title>
+</head>
+<body>
+    <script>
+        function Rat(name,weight,speed) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+            this.isDead = false;
+            this.speak = function() {
+                console.log('chit chit...')
+            }
+        }
+        function Cat(name,weight,speed) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+            this.speak = function() {
+                console.log('meo meo...')
+            }
+            this.canCatchMouse = function(mouse) {
+                if (this.speed > mouse.speed) {
+                    console.log(`${this.name} can catch ${mouse.name}.`);
+                    return true
+                } else return false
+            }
+            this.eat = function(mouse) {
+                if (this.canCatchMouse(mouse) && mouse.isDead === false) {
+                    this.weight += mouse.weight;
+                    mouse.isDead = true;
+                    mouse.weight = 0;
+                    console.log(`${this.name}  eat ${mouse.name} successful`)
+                } else {
+                    console.log(`${this.name} can't eat ${mouse.name} `)
+                }
+            }
+        }
+        var Tom = new Cat('tom',10,12);
+        var Jerry = new Rat('jerry',2,10);
+        console.log(Tom);
+        console.log(Jerry);
+        Tom.eat(Jerry);
+        console.log(Tom);
+        console.log(Jerry);
+    </script>
+</body>
+</html>
