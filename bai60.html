@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[Bài tập] Validate email</title>
+</head>
+
+<body>
+    <script>
+        function isEmail(str) {
+            regexp = /^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)$/;
+            if (regexp.test(str)) {
+                console.log('true');
+            } else {
+                console.log('false');
+            }
+        }
+        var mail1 = 'a@gmail.com';
+        var mail2 = 'ab@yahoo.com';
+        var mail3 = 'abc@hotmail.com';
+        var mail4  = '@gmail.com';
+        var mail5 = 'ab@gmail.';
+        var mail6 = '@#abc@gmail.com';
+        isEmail(mail1);
+        isEmail(mail2);
+        isEmail(mail3);
+        isEmail(mail4);
+        isEmail(mail5);
+        isEmail(mail6);
+    </script>
+</body>
+
+</html>
