@@ -17,6 +17,7 @@
             this.cents = cents;
             this.contextMess = '';
             this.receiveBox = '';
+            this.outBox = '';
             this.isOn = true;
             this.typingMess = function (str) {
                 if (!this.isOn) {
@@ -41,6 +42,8 @@
                     return
                 } else {
                     otherPhone.receiveMess(this.contextMess);
+                    this.outBox = this.contextMess;
+                    this.contextMess = "";
                     this.consume();
                 }
 
@@ -59,10 +62,11 @@
         }
         var nokia = new Mobile(50);
         var iphone = new Mobile(47);
-        console.log(nokia, iphone);
-        nokia.typingMess('ewrtyghujl;');
+        console.log(nokia, iphone);// before
+        nokia.typingMess('fdxgchdfdsgdsg');
         nokia.sendMess(iphone);
-        console.log(nokia, iphone);
+        nokia.outBox;
+        console.log(nokia, iphone);// after
     </script>
 </body>
 
